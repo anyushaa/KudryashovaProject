@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
+
+
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	word-break: break-all;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: px;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	color: #6e6e6e;
+	font-size: 1.6rem;
+  background: #fff;
+}
+
+header, footer {
+  display: block;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.center {
+  width: 90%;
+  max-width: 1170px;
+  margin: 50px auto 0;  
+}
+
+.error-holder {
+  position: relative;
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 8rem 0;
+  color: #007bff;
+  font-weight: bold; 
+
+}
+
+.error-holder span[title] {
+  position: relative;
+  font-size: 10rem;
+  color: #000000;
+  opacity: 0;
+  transform-origin: 400px 200px;
+  transform: rotate(135deg) scale(.5);
+  animation: animateIt .5s ease-in forwards; 
+}
+
+.error-holder span:nth-of-type(2) {
+  animation-delay: .1s;
+}
+
+.error-holder span:nth-of-type(3) {
+  margin: 0 3rem 0 0;
+  animation-delay: .2s;
+}
+
+@keyframes animateIt {
+  0% {
+    transform: rotate(135deg) scale(.5);
+  }
+  80% {
+    transform: rotate(0) scale(1, .7);
+  }
+  90% {
+    transform: rotate(0) scale(1, 1.1);
+  }
+  100% {
+    transform: rotate(0) scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.error-holder span[title]:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  bottom: 25px;
+  right: 13px;
+  border-radius: 100%;
+  border: 2px solid #007bff; 
+  transform: rotateX(70deg) scale(1);
+  filter: blur(1px);
+  opacity: 10;
+  animation: smoke 4s .2s ease-out forwards;
+}
+
+.error-holder span:nth-of-type(2):before {
+  right: 24px;
+  animation-delay: .5s;
+}
+
+.error-holder span:nth-of-type(3):before {
+  animation-delay: .6s;
+}
+
+@keyframes smoke {
+  0% {
+    transform: rotateX(70deg) scale(1);
+  }
+  20% {
+    transform: rotateX(70deg) scale(15);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(70deg) scale(22);
+    opacity: 0;
+  }
+}
+
+.error-holder > span {
+  transform: translateX(350px);
+  opacity: 0;
+  animation: animateAll .3s .6s ease-out forwards;
+}
+
+.error-holder > span:not([title]) {
+  text-shadow: 1px 1px 0 white;
+}
+
+.error-holder span:nth-of-type(5) {
+  animation-delay: .7s;
+}
+.error-holder span:nth-of-type(6) {
+  animation-delay: .8s;
+}
+.error-holder span:nth-of-type(7) {
+  animation-delay: .9s;
+}
+.error-holder span:nth-of-type(8) {
+  animation-delay: 1s;
+} 
+
+@keyframes animateAll {
+  0% {
+    transform: translateX(350px) scale(1, .1) rotate(0);
+  }
+  70% {
+    transform: translateX(-25px) rotate(135deg);
+  }
+  100% {
+    transform: translateX(0) scale(1, 1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  bottom: 20px;
+  opacity: 0;
+  transform: translate(-50%, -250px);
+  border-radius: 100%;
+  background: #fce21b;
+  background: -moz-radial-gradient(circle at 50% 75%, white, #f9e231 40%, #ffbf00 60%);
+  background: -webkit-radial-gradient(circle at 50% 75%, white, #f9e231 40%, #ffbf00 60%);
+  background: -o-radial-gradient(circle at 50% 75%, white, #f9e231 40%, #ffbf00 60%);
+  background: -ms-radial-gradient(circle at 50% 75%, white, #f9e231 40%, #ffbf00 60%);
+  background: radial-gradient(circle at 50% 75%, white, #f9e231 40%, #ffbf00 60%);
+  animation: animateFace .6s 1.4s ease-in-out forwards
+}
+
+@keyframes animateFace {
+  0% {
+    transform: translate(-50%, -350px) scale(1);
+    opacity: 0;
+  }
+  40% {
+     transform: translate(-50%, 0) scale(1);
+  }
+  41%, 42% {
+     transform: translate(-50%, 0) scale(1, .6);
+  }
+  70% {
+     transform: translate(-50%, -120px) scale(1);
+  }
+  88% {
+     transform: translate(-50%, 0) scale(1);
+  }
+  95% {
+     transform: translate(-50%, -10px) scale(1);
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.face:before, .face:after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 28px;
+  border: 1px solid #666;
+  border-radius: 50%;
+  background: white;
+  background: -moz-radial-gradient(circle at 30% 100%, black 50%, white 50%);
+  background: -webkit-radial-gradient(circle at 30% 100%, black 50%, white 50%);
+  background: -o-radial-gradient(circle at 30% 100%, black 50%, white 50%);
+  background: -ms-radial-gradient(circle at 30% 100%, black 50%, white 50%);
+  background: radial-gradient(circle at 30% 100%, black 50%, white 50%);
+  top: 23px;
+}
+
+.face:before {
+  left: 10px;
+}
+
+.face:after {
+  right: 10px;
+}
+
+.face span {
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: 50px;
+  left: calc(50% - 18px);
+  bottom: -4px;
+  border-radius: 50% 50% 0 0;
+  border-top: 2px solid #666;
+}
